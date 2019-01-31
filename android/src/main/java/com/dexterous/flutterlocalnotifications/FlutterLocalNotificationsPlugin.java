@@ -119,7 +119,8 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
                 .setContentIntent(pendingIntent)
                 .setPriority(notificationDetails.priority)
                 .setOngoing(BooleanUtils.getValue(notificationDetails.ongoing))
-                .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce));
+                .setOnlyAlertOnce(BooleanUtils.getValue(notificationDetails.onlyAlertOnce))
+                .setLights(0xffff0000, 100, 500);
 
         if (!StringUtils.isNullOrEmpty(notificationDetails.largeIcon)) {
             builder.setLargeIcon(getBitmapFromSource(context, notificationDetails.largeIcon, notificationDetails.largeIconBitmapSource));
