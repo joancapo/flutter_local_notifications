@@ -690,6 +690,7 @@ public class FlutterLocalNotificationsPlugin implements MethodCallHandler, Plugi
 
     public static void showNotification(Context context, NotificationDetails notificationDetails) {
         Notification notification = createNotification(context, notificationDetails);
+        notification.flags |= Notification.FLAG_SHOW_LIGHTS;
         NotificationManagerCompat notificationManagerCompat = getNotificationManager(context);
         notificationManagerCompat.notify(notificationDetails.id, notification);
         /*SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE);
